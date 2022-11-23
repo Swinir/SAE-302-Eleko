@@ -14,7 +14,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView
         android:id="@+id/imageView"
@@ -48,28 +48,87 @@
         app:layout_constraintTop_toBottomOf="@+id/TopNavigationView">
 
         <LinearLayout
-            android:id="@+id/linearLayout1"
-            android:layout_width="300dp"
+            android:id="@+id/linearLayoutPrevision"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:background="@xml/round_rect_shape"
             android:orientation="vertical"
             android:padding="5dp">
-
-
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/textViewPrevision"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Something text"
+                android:text="Prévision de consomation pour aujourd'hui"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#ff0000" />
+                android:textColor="#FFF"
+                android:textAlignment="center"/>
 
-            <EditText
-                android:id="@+id/editText1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linearLayoutFrance"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:background="@xml/round_rect_shape"
+            android:orientation="vertical"
+            android:padding="5dp">
+            <LinearLayout
+                android:id="@+id/linearLayoutImage"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="5dp">
+                <ImageView
+                    android:id="@+id/imageViewMap"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    app:srcCompat="@drawable/france_green" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linearLayoutConsomation"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="500dp"
+            android:background="@xml/round_rect_shape"
+            android:orientation="vertical"
+            android:padding="5dp">
+            <TextView
+                android:id="@+id/textViewConsomation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Consomation sur 24h"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFF"
+                android:textAlignment="center"/>
+            <LinearLayout
+                android:id="@+id/linearLayoutHours"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@xml/round_rect_shape"
+                android:orientation="vertical"
+                android:padding="5dp">
+                <TextView
+                    android:id="@+id/textViewHours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#FFF"
+                    android:textAlignment="center"/>
+
+                <ImageView
+                    android:id="@+id/imageViewHours"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:srcCompat="@android:drawable/btn_default_small" />
+            </LinearLayout>
         </LinearLayout>
     </FrameLayout>
 
