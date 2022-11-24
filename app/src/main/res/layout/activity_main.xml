@@ -63,7 +63,7 @@
                 android:id="@+id/textViewPrevision"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Prévision de consomation pour aujourd'hui"
+                android:text="Prévision de consommation pour aujourd'hui"
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#FFF" />
@@ -97,7 +97,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayoutConsomation"
+            android:id="@+id/linearLayoutConsommation"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -107,11 +107,11 @@
             android:padding="5dp">
 
             <TextView
-                android:id="@+id/textViewConsomation"
+                android:id="@+id/textViewConsommation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Consomation sur 24h"
+                android:text="Consommation sur 24h"
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#FFF" />
