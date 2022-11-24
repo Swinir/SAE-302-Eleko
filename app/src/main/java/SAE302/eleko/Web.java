@@ -1,5 +1,7 @@
 package SAE302.eleko;
 
+import android.app.Activity;
+import android.content.Context;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -22,16 +24,18 @@ public class Web extends AppCompatActivity {
     private EditText output;
     private ExecutorService exe;
     private Future<String> todo;
+    private Context context;
 
-    public String onCreate(String s) {
+    public String onCreate(String s, Activity a) {
+        context = a;
 
         URL u;
 
         try {
             u = new URL(s);
         } catch (MalformedURLException e) {
-            Toast.makeText(this, "URL invalide", Toast.LENGTH_LONG).show();
             e.printStackTrace();
+            Toast.makeText(context, "Erreur de récupéraiton des données sur internet", Toast.LENGTH_LONG).show();
             u = null;
         }
 
@@ -39,20 +43,22 @@ public class Web extends AppCompatActivity {
         // On crée l'objet qui va gérer la thread
         exe = Executors.newSingleThreadExecutor();
         // On lance la thread
-        todo = lireURL(u);
+        todo = lireURL(u, context);
         // On attend le résultat
         try {
             s = todo.get();
         } catch (ExecutionException e) {
             e.printStackTrace();
+            Toast.makeText(context, "Erreur de récupéraiton des données sur internet", Toast.LENGTH_LONG).show();
         } catch (InterruptedException e) {
             e.printStackTrace();
+            Toast.makeText(context, "Erreur de récupéraiton des données sur internet", Toast.LENGTH_LONG).show();
         }
         // On retourne le résultat
         return s;
     }
 
-    public Future<String> lireURL(URL u) {
+    public Future<String> lireURL(URL u,Context context) {
         return exe.submit(() -> {
             URLConnection c;
             String inputline;
@@ -75,6 +81,7 @@ public class Web extends AppCompatActivity {
                 in.close();
             } catch (IOException e) {
                 e.printStackTrace();
+                Toast.makeText(context, "Erreur de récupéraiton des données sur internet", Toast.LENGTH_LONG).show();
             }
             return codeHTML.toString();
         });

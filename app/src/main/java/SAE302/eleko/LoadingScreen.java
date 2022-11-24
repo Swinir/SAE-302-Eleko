@@ -22,7 +22,7 @@ public class LoadingScreen extends AppCompatActivity {
 
         String inputURL = "https://www.google.com"; //Dummy URL for testing
 
-        String Web_Data = new Web().onCreate(inputURL); //Get the JSON data from the web
+        String Web_Data = new Web().onCreate(inputURL,LoadingScreen.this); //Get the JSON data from the web
 
         new Json_Parser().decodeJSON(Web_Data); //Parse the JSON data and store it into the correct classes
 
