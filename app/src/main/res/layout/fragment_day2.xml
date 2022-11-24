@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Day2Fragment">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPrevision"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@xml/round_rect_shape"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/textViewPrevision"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prévision de consommation pour day2"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFF" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutFrance"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:background="@xml/round_rect_shape"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutImage"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/imageViewMap"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    app:srcCompat="@drawable/france_green" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutConsommation"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="500dp"
+            android:background="@xml/round_rect_shape"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/textViewConsommation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Consommation sur 24h"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFF" />
+
+            <HorizontalScrollView
+                android:layout_width="311dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textViewHours"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textAlignment="center"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFF" />
+
+                        <ImageView
+                            android:id="@+id/imageViewHours"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:rotation="90"
+                            android:scaleType="center"
+                            app:srcCompat="@android:drawable/editbox_background" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="2"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="3"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="4"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="5"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="6"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours7"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="7"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours8"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="8"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours9"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="9"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours10"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="10"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours11"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="11"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours12"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="12"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours13"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="13"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours13"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours14"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="14"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours15"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="15"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours15"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours16"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="16"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours16"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours17"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="17"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours17"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours18"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="18"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours19"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="19"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours19"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours20"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="20"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours20"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours21"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="21"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours21"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours22"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="22"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours22"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours23"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="23"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours23"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewHours24"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="24"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFF" />
+
+                            <ImageView
+                                android:id="@+id/imageViewHours24"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:rotation="90"
+                                android:scaleType="center"
+                                app:srcCompat="@android:drawable/editbox_background" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

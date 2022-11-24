@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.EléKo" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorAccent">@color/teal_200</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@drawable/background_loading_screen</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.EléKo.Fullscreen" parent="Theme.EléKo">
+        <item name="android:actionBarStyle">@style/Widget.Theme.EléKo.ActionBar.Fullscreen</item>
+        <item name="android:windowActionBarOverlay">true</item>
+    </style>
+
+    <style name="ThemeOverlay.EléKo.FullscreenContainer" parent="">
+        <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
+        <item name="fullscreenTextColor">@color/light_blue_A200</item>
+    </style>
+</resources>
