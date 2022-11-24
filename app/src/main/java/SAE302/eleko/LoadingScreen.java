@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.Toast;
 
 public class LoadingScreen extends AppCompatActivity {
     @Override
@@ -19,6 +18,14 @@ public class LoadingScreen extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.hide();
         }
+
+
+        String inputURL = "https://www.google.com"; //Dummy URL for testing
+
+        String Web_Data = new Web().onCreate(inputURL); //Get the JSON data from the web
+
+        new Json_Parser().decodeJSON(Web_Data); //Parse the JSON data and store it into the correct classes
+
 
 
         //Start the main activity after 3 seconds

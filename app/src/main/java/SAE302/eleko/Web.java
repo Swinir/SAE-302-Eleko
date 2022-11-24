@@ -23,12 +23,9 @@ public class Web extends AppCompatActivity {
     private ExecutorService exe;
     private Future<String> todo;
 
-    public void onCreate(EditText inputURL) {
+    public String onCreate(String s) {
 
-        String s;
         URL u;
-
-        s = inputURL.getText().toString();
 
         try {
             u = new URL(s);
@@ -51,8 +48,8 @@ public class Web extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        // On affiche le résultat
-        output.setText(s);
+        // On retourne le résultat
+        return s;
     }
 
     public Future<String> lireURL(URL u) {
