@@ -2,8 +2,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-    public static void main(String[] args) {
-
+    public void Menu() {
         //This is the menu to choose the data source and other options
         System.out.println("Welcome to the backend Eleko program");
         System.out.println("Please choose the data source");

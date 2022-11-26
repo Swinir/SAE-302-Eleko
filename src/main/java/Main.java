@@ -10,11 +10,13 @@ public class Main {
 
         //This is the main class of the project
 
+        new Menu().Menu();
+
 
     }
 
     public void choice1() {
-        Web_input web_url = new Web_input("http://infort.gautero.fr");
+        Web_input web_url = new Web_input("http://isis.unice.fr/~mgautero/ext/sae302/index.php");
         String data_from_web = web_url.lireURL("action=get");
         System.out.println(data_from_web); //TODO: remove this line after testing
     }
