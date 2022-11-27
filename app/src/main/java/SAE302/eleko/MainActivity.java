@@ -7,7 +7,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import SAE302.eleko.databinding.ActivityMainBinding;
 
@@ -37,6 +41,15 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.day4:
                     replaceFragment(new Day4Fragment());
                     break;
+            }
+            return true;
+        });
+
+        //Listen for when the user clicks the settings button
+        binding.TopNavigationView.setOnNavigationItemSelectedListener(v -> {
+            if (v.getItemId() == R.id.settingbutton) {
+                Intent intent = new Intent(this, Settings.class);
+                startActivity(intent);
             }
             return true;
         });
