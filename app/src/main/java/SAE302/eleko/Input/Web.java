@@ -1,4 +1,4 @@
-package SAE302.eleko;
+package SAE302.eleko.Input;
 
 import android.app.Activity;
 import android.content.Context;
