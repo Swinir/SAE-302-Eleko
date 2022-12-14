@@ -8,7 +8,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SAE-302-Eleko-Java" />
         <module name="SAE-302-Eleko" />
+        <module name="SAE-302-Application-Android" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="SAE-302-Application-Android" target="18" />
+    </bytecodeTargetLevel>
   </component>
 </project>
