@@ -14,6 +14,7 @@ import SAE302.eleko.Input.JSON_Parser;
 import SAE302.eleko.Input.Web;
 
 public class LoadingScreen extends AppCompatActivity {
+    SAE302.eleko.Data.Jour[] data_array;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,12 +33,10 @@ public class LoadingScreen extends AppCompatActivity {
 
         JSON_Parser json_parser = null;
         try {
-            SAE302.eleko.Data.Jour[] data_array = new JSON_Parser().onCreate(Web_Data, LoadingScreen.this); //Parse the JSON data
-            System.out.println(data_array[0]);
+            data_array = new JSON_Parser().onCreate(Web_Data, LoadingScreen.this); //Parse the JSON data
         } catch (JSONException e) {
             Toast.makeText(this,"Erreur de parsing des données json", Toast.LENGTH_LONG).show();
         }
-
 
 
         //Start the main activity after 3 seconds
@@ -46,6 +45,7 @@ public class LoadingScreen extends AppCompatActivity {
             @Override
             public void run() {
                 Intent intent = new Intent(LoadingScreen.this, MainActivity.class);
+                intent.putExtra("data", data_array);
                 startActivity(intent);
                 finish();
             }

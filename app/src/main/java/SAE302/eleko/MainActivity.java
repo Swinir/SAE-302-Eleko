@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import SAE302.eleko.Data.Jour;
 import SAE302.eleko.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +27,14 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());
+
+        Intent intent = getIntent();
+        if (intent != null) {
+            Jour[] data = (Jour[]) getIntent().getSerializableExtra("data");
+            if (data != null) {
+                Toast.makeText(this, "Data received", Toast.LENGTH_SHORT).show(); //TODO: Remove after testing
+            }
+        }
 
         binding.bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
@@ -48,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
         //Listen for when the user clicks the settings button
         binding.TopNavigationView.setOnNavigationItemSelectedListener(v -> {
             if (v.getItemId() == R.id.settingbutton) {
-                Intent intent = new Intent(this, Settings.class);
-                startActivity(intent);
+                Intent intent_settings = new Intent(this, Settings.class);
+                startActivity(intent_settings);
             }
             return true;
         });

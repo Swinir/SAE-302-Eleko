@@ -1,6 +1,8 @@
 package SAE302.eleko.Data;
 
-public class Etat {
+import java.io.Serializable;
+
+public class Etat implements Serializable {
     //Définie les trois états possibles du réseau
 
     private int pas;

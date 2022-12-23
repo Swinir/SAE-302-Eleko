@@ -1,8 +1,9 @@
 package SAE302.eleko.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Jour {
+public class Jour implements Serializable {
     //Stocke la date et +
 
     String GenerationFichier;

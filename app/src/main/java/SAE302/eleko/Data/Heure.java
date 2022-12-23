@@ -1,6 +1,8 @@
 package SAE302.eleko.Data;
 
-public class Heure{
+import java.io.Serializable;
+
+public class Heure implements Serializable {
     //Definition des heures
 
     private Etat heure;
