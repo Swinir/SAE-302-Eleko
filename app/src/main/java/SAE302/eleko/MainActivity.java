@@ -9,9 +9,10 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Toast;
+
+import java.util.Calendar;
+import java.util.Date;
 
 import SAE302.eleko.Data.Jour;
 import SAE302.eleko.databinding.ActivityMainBinding;
@@ -30,11 +31,19 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         if (intent != null) {
-            Jour[] data = (Jour[]) getIntent().getSerializableExtra("data");
+            Jour[] data = (Jour[]) getIntent().getSerializableExtra("data"); //Get data downloaded and parsed from loadingscreen activity
             if (data != null) {
                 Toast.makeText(this, "Data received", Toast.LENGTH_SHORT).show(); //TODO: Remove after testing
             }
         }
+        else {
+            Toast.makeText(this, "No data received, app will not function correctly", Toast.LENGTH_LONG).show();
+        }
+
+        Date currentTime = Calendar.getInstance().getTime(); //Get current day and time
+
+
+
 
         binding.bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {

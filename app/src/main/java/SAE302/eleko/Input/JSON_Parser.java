@@ -5,6 +5,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import android.app.Activity;
+import java.text.ParseException;
 
 public class JSON_Parser {
 
@@ -38,7 +39,11 @@ public class JSON_Parser {
 
                     json_saverHeure.JSON_Saver_Hours(pas, hvalue);
                 }
-                json_saverHeure.JSON_Saver_Day(GenerationFichier, jour, dvalue, message, json_saverHeure.getArr_24h());
+                try {
+                    json_saverHeure.JSON_Saver_Day(GenerationFichier, jour, dvalue, message, json_saverHeure.getArr_24h());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
                 json_saver_jour.JSON_save_day(json_saverHeure.getJour(), i);
             }
         }
