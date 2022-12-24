@@ -1,14 +1,13 @@
 import Input.JSON_Parser;
 import Input.Web_input;
 
-import java.lang.reflect.Array;
-import java.util.Scanner;
+import java.text.ParseException;
+
 
 public class Main {
     public static void main(String[] args) {
 
         //Variables
-        Array data_array;
 
         //This is the main class of the project
 
@@ -24,7 +23,11 @@ public class Main {
         System.out.println(data_from_web); //TODO: remove this line after testing
 
         JSON_Parser json_parser = new JSON_Parser(data_from_web);
-        System.out.println(json_parser.return_data()); //TODO: change this line after testing
+        Data.Jour[] data_array = json_parser.return_data();
+        System.out.println("The data has been successfully parsed and saved in the software");
+
+        System.out.println(data_array); //TODO: remove this line after testing
+
     }
 
     public void choice2() {

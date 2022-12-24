@@ -4,6 +4,8 @@ import Data.Jour;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+
 public class JSON_Parser {
 
     JSON_Saver_Jour json_saver_jour;
@@ -34,7 +36,11 @@ public class JSON_Parser {
 
                     json_saverHeure.JSON_Saver_Hours(pas, hvalue);
                 }
-                json_saverHeure.JSON_Saver_Day(GenerationFichier, jour, dvalue, message, json_saverHeure.getArr_24h());
+                try {
+                    json_saverHeure.JSON_Saver_Day(GenerationFichier, jour, dvalue, message, json_saverHeure.getArr_24h());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
                 json_saver_jour.JSON_save_day(json_saverHeure.getJour(), i);
             }
         }
