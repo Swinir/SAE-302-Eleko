@@ -6,8 +6,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.Toast;
+
+import org.json.JSONException;
+
+import SAE302.eleko.Input.JSON_Parser;
+import SAE302.eleko.Input.Web;
 
 public class LoadingScreen extends AppCompatActivity {
+    SAE302.eleko.Data.Jour[] data_array;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,12 +27,16 @@ public class LoadingScreen extends AppCompatActivity {
         }
 
 
-        String inputURL = "https://www.google.com"; //Dummy URL for testing
+        String inputURL = "http://isis.unice.fr/~mgautero/ext/sae302/index.php?action=get"; //Dummy URL for testing
 
         String Web_Data = new Web().onCreate(inputURL,LoadingScreen.this); //Get the JSON data from the web
 
-        new Json_Parser().decodeJSON(Web_Data); //Parse the JSON data and store it into the correct classes
-
+        JSON_Parser json_parser = null;
+        try {
+            data_array = new JSON_Parser().onCreate(Web_Data, LoadingScreen.this); //Parse the JSON data
+        } catch (JSONException e) {
+            Toast.makeText(this,"Erreur de parsing des données json", Toast.LENGTH_LONG).show();
+        }
 
 
         //Start the main activity after 3 seconds
@@ -34,6 +45,7 @@ public class LoadingScreen extends AppCompatActivity {
             @Override
             public void run() {
                 Intent intent = new Intent(LoadingScreen.this, MainActivity.class);
+                intent.putExtra("data", data_array);
                 startActivity(intent);
                 finish();
             }

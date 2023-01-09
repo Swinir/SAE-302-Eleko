@@ -3,5 +3,6 @@
 
     <item
         android:icon="@drawable/ic_settings_24"
-        android:title="Settings" />
+        android:title="Settings"
+        android:id="@+id/settingbutton"/>
 </menu>
