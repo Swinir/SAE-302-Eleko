@@ -12,4 +12,8 @@ public class Etat implements Serializable {
         this.pas = pas;
         this.hvalue = hvalue;
     }
+
+    public Integer getHvalue() {
+        return hvalue;
+    }
 }

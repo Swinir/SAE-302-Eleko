@@ -12,4 +12,11 @@ public class Heure implements Serializable {
         this.heure = new Etat(heure, hvalue);
     }
 
+
+    public Etat getHeure() {
+        return heure;
+    }
+    public Integer getHvalue() {
+        return heure.getHvalue();
+    }
 }
