@@ -8,8 +8,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import SAE302.eleko.Data.Jour;
+
 
 public class Day2Fragment extends Fragment {
+
+    private final Jour[] data;
+
+    public Day2Fragment(Jour[] data) {
+        this.data = data;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

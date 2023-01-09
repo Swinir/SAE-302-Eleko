@@ -27,14 +27,14 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
 
         setContentView(binding.getRoot());
-        replaceFragment(new HomeFragment());
 
         Intent intent = getIntent();
-        if (intent != null) {
-            Jour[] data = (Jour[]) getIntent().getSerializableExtra("data"); //Get data downloaded and parsed from loadingscreen activity
-            if (data != null) {
-                Toast.makeText(this, "Data received", Toast.LENGTH_SHORT).show(); //TODO: Remove after testing
-            }
+        Jour[] data = (Jour[]) getIntent().getSerializableExtra("data"); //Get data downloaded and parsed from loadingscreen activity
+
+        replaceFragment(new HomeFragment(data));
+
+        if (data != null) {
+            Toast.makeText(this, "Data received", Toast.LENGTH_SHORT).show(); //TODO: Remove after testing
         }
         else {
             Toast.makeText(this, "No data received, app will not function correctly", Toast.LENGTH_LONG).show();
@@ -48,16 +48,17 @@ public class MainActivity extends AppCompatActivity {
         binding.bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.day1:
-                    replaceFragment(new HomeFragment());
+                    //Put the data before committing the data
+                    replaceFragment(new HomeFragment(data));
                     break;
                 case R.id.day2:
-                    replaceFragment(new Day2Fragment());
+                    replaceFragment(new Day2Fragment(data));
                     break;
                 case R.id.day3:
-                    replaceFragment(new Day3Fragment());
+                    replaceFragment(new Day3Fragment(data));
                     break;
                 case R.id.day4:
-                    replaceFragment(new Day4Fragment());
+                    replaceFragment(new Day4Fragment(data));
                     break;
             }
             return true;

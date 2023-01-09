@@ -25,4 +25,22 @@ public class Jour implements Serializable {
         JourenDate = originalFormat.parse(jour.substring(0,4)+ jour.substring(5,7) + jour.substring(8,10));
     }
 
+    public Date getDate() {
+        return JourenDate;
+    }
+    public String getGenerationFichier() {
+        return GenerationFichier;
+    }
+    public String getJour() {
+        return jour;
+    }
+    public Integer getDvalue() {
+        return dvalue;
+    }
+    public String getMessage() {
+        return message;
+    }
+    public SAE302.eleko.Data.Heure[] getArr_24h() {
+        return arr_24h;
+    }
 }
