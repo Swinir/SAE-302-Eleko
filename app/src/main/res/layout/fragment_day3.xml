@@ -31,7 +31,7 @@
                 android:id="@+id/textViewPrevision"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Prévision de consommation pour day3"
+                android:text="Prévision de consommation pour"
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#FFF" />

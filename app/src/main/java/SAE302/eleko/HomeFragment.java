@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -24,12 +23,9 @@ public class HomeFragment extends Fragment {
     private final Jour[] data;
     ImageView img_france;
     ImageView[] imageViewHoursArray;
-
-
     ViewGroup root;
 
     public HomeFragment(Jour[] data) {
-        // Required empty public constructor
         this.data = data;
     }
 
@@ -38,14 +34,11 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
 
         //Here we get all the different id's for the images we might need to change
         root = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
@@ -123,8 +116,7 @@ public class HomeFragment extends Fragment {
                 }
             }
         }
-
-
+        // Inflate the layout for this fragment
         return root;
     }
 
