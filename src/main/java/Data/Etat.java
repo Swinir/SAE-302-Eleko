@@ -10,6 +10,8 @@ public class Etat {
         this.pas = pas;
         this.hvalue = hvalue;
     }
-
+    public Integer getHvalue() {
+        return hvalue;
+    }
 
 }
