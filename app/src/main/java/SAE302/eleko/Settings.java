@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import SAE302.eleko.Data.Jour;
 import SAE302.eleko.databinding.ActivityMainBinding;
 import SAE302.eleko.databinding.ActivitySettingsBinding;
 
@@ -26,6 +27,8 @@ public class Settings extends AppCompatActivity {
         binding = ActivitySettingsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        Jour[] data = (Jour[]) getIntent().getSerializableExtra("data"); //Get data downloaded and parsed from loadingscreen activity
+
         Button buttoncontact = (Button) findViewById(R.id.buttoncontact);
 
 
@@ -33,6 +36,7 @@ public class Settings extends AppCompatActivity {
         binding.TopNavigationView.setOnNavigationItemSelectedListener(v -> {
             if (v.getItemId() == R.id.returnbutton) {
                 Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("data", data);
                 startActivity(intent);
             }
             return true;

@@ -17,7 +17,6 @@ import java.util.Date;
 import SAE302.eleko.Data.Heure;
 import SAE302.eleko.Data.Jour;
 
-
 public class HomeFragment extends Fragment {
 
     private final Jour[] data;
@@ -29,8 +28,6 @@ public class HomeFragment extends Fragment {
         this.data = data;
     }
 
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,35 +36,34 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         //Here we get all the different id's for the images we might need to change
         root = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
         img_france = (ImageView) root.findViewById(R.id.imageViewMap);
         imageViewHoursArray = new ImageView[24];
-        imageViewHoursArray[0] = (ImageView) root.findViewById(R.id.imageViewHours);
-        imageViewHoursArray[1] = (ImageView) root.findViewById(R.id.imageViewHours2);
-        imageViewHoursArray[2] = (ImageView) root.findViewById(R.id.imageViewHours3);
-        imageViewHoursArray[3] = (ImageView) root.findViewById(R.id.imageViewHours4);
-        imageViewHoursArray[4] = (ImageView) root.findViewById(R.id.imageViewHours5);
-        imageViewHoursArray[5] = (ImageView) root.findViewById(R.id.imageViewHours6);
-        imageViewHoursArray[6] = (ImageView) root.findViewById(R.id.imageViewHours7);
-        imageViewHoursArray[7] = (ImageView) root.findViewById(R.id.imageViewHours8);
-        imageViewHoursArray[8] = (ImageView) root.findViewById(R.id.imageViewHours9);
-        imageViewHoursArray[9] = (ImageView) root.findViewById(R.id.imageViewHours10);
-        imageViewHoursArray[10] = (ImageView) root.findViewById(R.id.imageViewHours11);
-        imageViewHoursArray[11] = (ImageView) root.findViewById(R.id.imageViewHours12);
-        imageViewHoursArray[12] = (ImageView) root.findViewById(R.id.imageViewHours13);
-        imageViewHoursArray[13] = (ImageView) root.findViewById(R.id.imageViewHours14);
-        imageViewHoursArray[14] = (ImageView) root.findViewById(R.id.imageViewHours15);
-        imageViewHoursArray[15] = (ImageView) root.findViewById(R.id.imageViewHours16);
-        imageViewHoursArray[16] = (ImageView) root.findViewById(R.id.imageViewHours17);
-        imageViewHoursArray[17] = (ImageView) root.findViewById(R.id.imageViewHours18);
-        imageViewHoursArray[18] = (ImageView) root.findViewById(R.id.imageViewHours19);
-        imageViewHoursArray[19] = (ImageView) root.findViewById(R.id.imageViewHours20);
-        imageViewHoursArray[20] = (ImageView) root.findViewById(R.id.imageViewHours21);
-        imageViewHoursArray[21] = (ImageView) root.findViewById(R.id.imageViewHours22);
-        imageViewHoursArray[22] = (ImageView) root.findViewById(R.id.imageViewHours23);
-        imageViewHoursArray[23] = (ImageView) root.findViewById(R.id.imageViewHours24);
+        imageViewHoursArray[0] = root.findViewById(R.id.imageViewHours);
+        imageViewHoursArray[1] = root.findViewById(R.id.imageViewHours2);
+        imageViewHoursArray[2] = root.findViewById(R.id.imageViewHours3);
+        imageViewHoursArray[3] = root.findViewById(R.id.imageViewHours4);
+        imageViewHoursArray[4] = root.findViewById(R.id.imageViewHours5);
+        imageViewHoursArray[5] = root.findViewById(R.id.imageViewHours6);
+        imageViewHoursArray[6] = root.findViewById(R.id.imageViewHours7);
+        imageViewHoursArray[7] = root.findViewById(R.id.imageViewHours8);
+        imageViewHoursArray[8] = root.findViewById(R.id.imageViewHours9);
+        imageViewHoursArray[9] = root.findViewById(R.id.imageViewHours10);
+        imageViewHoursArray[10] = root.findViewById(R.id.imageViewHours11);
+        imageViewHoursArray[11] = root.findViewById(R.id.imageViewHours12);
+        imageViewHoursArray[12] = root.findViewById(R.id.imageViewHours13);
+        imageViewHoursArray[13] = root.findViewById(R.id.imageViewHours14);
+        imageViewHoursArray[14] = root.findViewById(R.id.imageViewHours15);
+        imageViewHoursArray[15] = root.findViewById(R.id.imageViewHours16);
+        imageViewHoursArray[16] = root.findViewById(R.id.imageViewHours17);
+        imageViewHoursArray[17] = root.findViewById(R.id.imageViewHours18);
+        imageViewHoursArray[18] = root.findViewById(R.id.imageViewHours19);
+        imageViewHoursArray[19] = root.findViewById(R.id.imageViewHours20);
+        imageViewHoursArray[20] = root.findViewById(R.id.imageViewHours21);
+        imageViewHoursArray[21] = root.findViewById(R.id.imageViewHours22);
+        imageViewHoursArray[22] = root.findViewById(R.id.imageViewHours23);
+        imageViewHoursArray[23] = root.findViewById(R.id.imageViewHours24);
 
 
         //Getting today's date and putting it in java's date format

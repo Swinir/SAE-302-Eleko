@@ -94,7 +94,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-
+        //Find the current day and set the corresponding data to be displayed
+        
 
 
         binding.bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
@@ -120,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
         binding.TopNavigationView.setOnNavigationItemSelectedListener(v -> {
             if (v.getItemId() == R.id.settingbutton) {
                 Intent intent_settings = new Intent(this, Settings.class);
+                intent_settings.putExtra("data", data);
                 startActivity(intent_settings);
             }
             return true;
