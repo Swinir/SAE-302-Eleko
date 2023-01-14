@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Date;
+
+import Data.Heure;
 import Data.Jour;
 
 public class Database_Import {
@@ -18,9 +20,18 @@ public class Database_Import {
         PreparedStatement preparedStatement = dbConnection.prepareStatement(insertSQL);
         for (Jour jour : data) {
             preparedStatement.setDate(1, new java.sql.Date(jour.getDate().getTime()));
-            for (int i = 0; i < 24; i++) {
-                preparedStatement.setInt(i + 2, jour.getArr_24h()[i].getHvalue());
+            //To take care of the hours array, we need to do the following
+            Heure[] Arr24h = jour.getArr_24h();
+            int i = 0;
+            for (Heure heure : Arr24h) {
+                try{
+                    preparedStatement.setInt(i + 2, heure.getHvalue());
+                } catch (NullPointerException e) {
+                    preparedStatement.setInt(i + 2, 0);
+                }
+                i++;
             }
+
             preparedStatement.setString(26, jour.getMessage());
             preparedStatement.addBatch();
         }
