@@ -4,6 +4,9 @@
     <root id="archive" name="SAE-302-Eleko-Java.jar">
       <element id="module-output" name="SAE-302-Eleko-Java" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/json-20151123.jar" path-in-jar="/" />
+      <element id="library" level="project" name="mysql.connector.java" />
+      <element id="library" level="project" name="json-20151123" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/mysql-connector-java-8.0.30.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
