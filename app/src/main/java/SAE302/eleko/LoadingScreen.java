@@ -27,7 +27,8 @@ public class LoadingScreen extends AppCompatActivity {
         }
 
 
-        String inputURL = "http://isis.unice.fr/~mgautero/ext/sae302/index.php?action=get"; //Dummy URL for testing
+        //String inputURL = "http://isis.unice.fr/~mgautero/ext/sae302/index.php?action=get"; //Dummy URL for testing
+        String inputURL = "http://eleko.me/index.php";
 
         String Web_Data = new Web().onCreate(inputURL,LoadingScreen.this); //Get the JSON data from the web
 
@@ -35,6 +36,7 @@ public class LoadingScreen extends AppCompatActivity {
         try {
             data_array = new JSON_Parser().onCreate(Web_Data, LoadingScreen.this); //Parse the JSON data
         } catch (JSONException e) {
+            e.printStackTrace();
             Toast.makeText(this,"Erreur de parsing des données json", Toast.LENGTH_LONG).show();
         }
 

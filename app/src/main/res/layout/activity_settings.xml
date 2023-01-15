@@ -50,79 +50,11 @@
         app:layout_constraintVertical_bias="1.0" >
 
         <LinearLayout
-            android:id="@+id/linearLayoutNotification"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:background="@xml/round_rect_shape"
-            android:orientation="vertical"
-            android:padding="0dp">
-
-            <TextView
-                android:id="@+id/textViewNotification"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text=" Notifications :"
-                android:textAlignment="center"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#FFF" />
-
-            <LinearLayout
-                android:id="@+id/linearLayoutTensionMoyenne"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"
-                android:background="@xml/round_rect_shape"
-                android:orientation="vertical"
-                android:padding="5dp">
-
-                <Switch
-                    android:id="@+id/switch1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Me notifier 2 heures à l'avance en cas de tension moyenne sur le réseauSwitch"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#FFF"
-                    android:track="@color/white"
-                    tools:ignore="TouchTargetSizeCheck"
-                    android:layout_marginStart="10dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayoutTensionCritique"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:background="@xml/round_rect_shape"
-                android:orientation="vertical"
-                android:padding="5dp">
-
-                <Switch
-                    android:id="@+id/switch2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Me notifier 2 heures à l'avance en cas de tension critique sur le réseauSwitch"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#FFF"
-                    android:track="@color/white"
-                    tools:ignore="TouchTargetSizeCheck"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginStart="10dp"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
             android:id="@+id/linearLayoutContact"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="260dp"
+            android:layout_marginTop="50dp"
             android:background="@xml/round_rect_shape"
             android:orientation="vertical"
             android:padding="0dp">
@@ -191,7 +123,7 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="390dp"
+            android:layout_marginTop="200dp"
             android:background="@xml/round_rect_shape"
             android:orientation="vertical"
             android:padding="0dp">

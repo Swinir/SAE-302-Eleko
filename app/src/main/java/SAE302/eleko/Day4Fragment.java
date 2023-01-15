@@ -1,5 +1,6 @@
 package SAE302.eleko;
 
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 
@@ -127,6 +128,10 @@ public class Day4Fragment extends Fragment {
 
                 //We start with the picture of France :
                 switch(jour.getDvalue()){
+                    case 0:
+                        //Display gray picture of France
+                        img_france.setColorFilter(Color.argb(255, 128, 128, 128));
+                        break;
                     case 1:
                         //Display green picture of France
                         img_france.setImageResource(R.drawable.france_green);
@@ -146,6 +151,9 @@ public class Day4Fragment extends Fragment {
                 int i = 0;
                 for (Heure heure : Arr24h) {
                     switch(heure.getHvalue()){
+                        case 0:
+                            //Display gray bar so no need to change anything
+                            break;
                         case 1:
                             //Display green bar
                             imageViewHoursArray[i].setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);

@@ -35,7 +35,7 @@ public class Web extends AppCompatActivity {
             u = new URL(s);
         } catch (MalformedURLException e) {
             e.printStackTrace();
-            Toast.makeText(context, "Erreur de récupéraiton des données sur internet", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Erreur de récupéraiton des données sur internet1", Toast.LENGTH_LONG).show();
             u = null;
         }
 
@@ -49,10 +49,10 @@ public class Web extends AppCompatActivity {
             s = todo.get();
         } catch (ExecutionException e) {
             e.printStackTrace();
-            Toast.makeText(context, "Erreur de récupéraiton des données sur internet", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Erreur de récupéraiton des données sur internet2", Toast.LENGTH_LONG).show();
         } catch (InterruptedException e) {
             e.printStackTrace();
-            Toast.makeText(context, "Erreur de récupéraiton des données sur internet", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Erreur de récupéraiton des données sur internet3", Toast.LENGTH_LONG).show();
         }
         // On retourne le résultat
         return s;
