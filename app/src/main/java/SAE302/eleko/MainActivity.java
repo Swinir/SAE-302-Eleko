@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         Date todayplusthree_date = new Date(todays_date.getTime() + (1000 * 60 * 60 * 24)*3);
 
         int i = 0;
+        boolean stop_menu = false;
+
         for (Jour jour : data) {
             //Checking if date is same day as today
             if (jour.getDate().compareTo(todays_date) == 0 || jour.getDate().compareTo(tomorrows_date) == 0 || jour.getDate().compareTo(todayplustwo_date) == 0 || jour.getDate().compareTo(todayplusthree_date) == 0) {
@@ -84,11 +86,14 @@ public class MainActivity extends AppCompatActivity {
                         dayName = ("Samedi");
                         break;
                 }
-                if (binding.bottomNavigationView.getMenu().getItem(i).getTitle().equals(dayName) == true){
+                if (stop_menu == false && binding.bottomNavigationView.getMenu().getItem(i).getTitle().equals(dayName) == true) {
                     i++;
                 }
-                else if (binding.bottomNavigationView.getMenu().getItem(i).getTitle().equals(dayName) == false){
+                else if (stop_menu == false  && binding.bottomNavigationView.getMenu().getItem(i).getTitle().equals(dayName) == false) {
                     binding.bottomNavigationView.getMenu().getItem(i).setTitle(dayName);
+                }
+                if (i == 4){
+                    stop_menu = true;
                 }
 
             }
