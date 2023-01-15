@@ -8,8 +8,9 @@ public class Menu {
         System.out.println("Welcome to the backend Eleko program");
         System.out.println("Please choose the data source");
         System.out.println("1. Web (http://infort.gautero.fr)");
-        System.out.println("2. Import data into databse (from json)"); //TODO: change this question
+        System.out.println("2. Import data into databse (from json)");
         System.out.println("3. SQLite"); //TODO: change this question
+        System.out.println("4. Delete all data from SQL Database");
         Scanner input = new Scanner(System.in);
         int choice = input.nextInt();
         switch (choice) {
@@ -21,6 +22,9 @@ public class Menu {
                 break;
             case 3:
                 new Main().choice3();
+                break;
+            case 4:
+                new Main().choice4();
                 break;
             default:
                 System.out.println("Please enter a valid choice");
