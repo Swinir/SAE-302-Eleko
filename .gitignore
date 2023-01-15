@@ -83,3 +83,5 @@ lint/tmp/
 # lint/reports/
 /.idea/discord.xml
 /.idea/misc.xml
+
+*.db
