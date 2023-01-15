@@ -12,7 +12,7 @@ if (!$conn) {
 }
 
 // Requête pour sélectionner toutes les données de la table "datas"
-$sql = "SELECT * FROM datas";
+$sql = "SELECT DISTINCT * FROM datas";
 $result = mysqli_query($conn, $sql);
 
 // Initialiser un tableau pour stocker les données
