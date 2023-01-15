@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteTargetsManager">
+    <targets>
+      <target name="ubuntu@144.24.194.254:22" type="ssh/sftp" uuid="77394385-d281-4a68-a6ee-85a6e9e0e50b">
+        <config>
+          <option name="projectRootOnTarget" value="/home/ubuntu/SAE-302-Eleko" />
+          <option name="serverName" value="ubuntu@144.24.194.254:22 key" />
+        </config>
+        <ContributedStateBase type="JavaLanguageRuntime">
+          <config>
+            <option name="javaVersionString" value="19.0.1" />
+          </config>
+        </ContributedStateBase>
+      </target>
+    </targets>
+  </component>
+</project>
