@@ -12,7 +12,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="json-20151123" level="project" />
-    <orderEntry type="library" exported="" name="mysql.connector.java" level="project" />
     <orderEntry type="library" exported="" name="mariadb.jdbc.java.client" level="project" />
     <orderEntry type="library" exported="" name="slf4j.simple" level="project" />
     <orderEntry type="library" exported="" name="slf4j.api" level="project" />
