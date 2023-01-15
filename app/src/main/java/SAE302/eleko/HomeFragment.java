@@ -1,5 +1,6 @@
 package SAE302.eleko;
 
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 
@@ -76,6 +77,10 @@ public class HomeFragment extends Fragment {
                 //If it is, then we can display the data
                 //We start with the picture of France :
                 switch(jour.getDvalue()){
+                    case 0:
+                        //Display gray picture of France
+                        img_france.setColorFilter(Color.argb(255, 128, 128, 128));
+                        break;
                     case 1:
                         //Display green picture of France
                         img_france.setImageResource(R.drawable.france_green);
@@ -95,6 +100,9 @@ public class HomeFragment extends Fragment {
                 int i = 0;
                 for (Heure heure : Arr24h) {
                     switch(heure.getHvalue()){
+                        case 0:
+                            //Display gray bar so no need to change anything
+                            break;
                         case 1:
                             //Display green bar
                             imageViewHoursArray[i].setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
@@ -117,7 +125,7 @@ public class HomeFragment extends Fragment {
     }
 
 
-    private Date getZeroTimeDate(Date date) {
+    private Date getZeroTimeDate(Date date) { //This function is used to get the date at 00:00:00 so we can compare the dates in the data
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         calendar.set(Calendar.HOUR_OF_DAY, 0);
