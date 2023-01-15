@@ -43,7 +43,7 @@ public class Main {
             JSON_Parser json_parser = new JSON_Parser(data_from_web);
             Data.Jour[] data_array = json_parser.return_data();
 
-            Connection dbConnection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/Eleko", "Admin", "ii594AqcthJj6DL7");
+            Connection dbConnection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/eleko", "Admin", "ii594AqcthJj6DL7");
             System.out.println("Connection established");
             Database_Import db_import = new Database_Import((java.sql.Connection) dbConnection);
             System.out.println("Database imported");
