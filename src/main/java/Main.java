@@ -16,16 +16,16 @@ public class Main {
             switch (value){
                 case 1:
                     new Main().choice1();
-                    break;
+                    System.exit(0);
                 case 2:
                     new Main().choice2();
-                    break;
+                    System.exit(0);
                 case 3:
                     new Main().choice3();
-                    break;
+                    System.exit(0);
                 case 4:
                     new Main().choice4();
-                    break;
+                    System.exit(0);
             }
         } else {
             System.out.println("No arguments provided.");
