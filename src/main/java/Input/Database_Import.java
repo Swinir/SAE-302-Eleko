@@ -14,8 +14,8 @@ public class Database_Import {
         this.dbConnection = dbConnection;
     }
 
-    public void storeData(Jour[] data) throws SQLException, ClassNotFoundException {
-        String insertSQL = "INSERT INTO datas (date_gen, jour, dvalue, hours0_data, hours1_data, hours2_data, hours3_data, hours4_data, hours5_data, hours6_data, hours7_data, hours8_data, hours9_data, hours10_data, hours11_data, hours12_data, hours13_data, hours14_data, hours15_data, hours16_data, hours17_data, hours18_data, hours19_data, hours20_data, hours21_data, hours22_data, hours23_data, message_data) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    public void storeData(Jour[] data , String name) throws SQLException, ClassNotFoundException {
+        String insertSQL = "INSERT INTO "+name+" (date_gen, jour, dvalue, hours0_data, hours1_data, hours2_data, hours3_data, hours4_data, hours5_data, hours6_data, hours7_data, hours8_data, hours9_data, hours10_data, hours11_data, hours12_data, hours13_data, hours14_data, hours15_data, hours16_data, hours17_data, hours18_data, hours19_data, hours20_data, hours21_data, hours22_data, hours23_data, message_data) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement preparedStatement = dbConnection.prepareStatement(insertSQL);
         for (Jour jour : data) {
             preparedStatement.setString(1, jour.getGenerationFichier());
