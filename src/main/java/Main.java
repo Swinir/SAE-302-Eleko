@@ -1,6 +1,7 @@
 import Data.Jour;
 import Input.*;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -8,7 +9,7 @@ import java.sql.SQLException;
 
 
 public class Main {
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException, IOException {
 
         //Check if command line arguments are present
         if (args.length > 0) { // If any arguments provided
@@ -25,6 +26,9 @@ public class Main {
                     System.exit(0);
                 case 4:
                     new Main().choice4();
+                    System.exit(0);
+                case 5:
+                    new Main().choice5();
                     System.exit(0);
             }
         } else {
@@ -64,7 +68,7 @@ public class Main {
             System.out.println("Connection established");
             Database_Import db_import = new Database_Import((java.sql.Connection) dbConnection);
             System.out.println("Database imported");
-            db_import.storeData(data_array);
+            db_import.storeData(data_array,"datas");
             System.out.println("Data has been successfully stored in the database");
         } catch (SQLException | ClassNotFoundException e) {
             System.out.println("Connection failed");
@@ -84,7 +88,7 @@ public class Main {
             System.out.println("Connection established");
             Database_Import db_import = new Database_Import((java.sql.Connection) dbConnection);
             System.out.println("Database imported");
-            db_import.storeData(data_array);
+            db_import.storeData(data_array,"datas");
             System.out.println("Data has been successfully stored in the database");
         } catch (SQLException | ClassNotFoundException e) {
             System.out.println("Connection failed");
@@ -99,5 +103,39 @@ public class Main {
         preparedStatement.executeUpdate();
         System.out.println("Data has been successfully deleted from the database");
     }
+
+    public void choice5() throws IOException {
+        try {
+        OAuth2API api = new OAuth2API("MTUyN2YzOTUtNWQwNi00Y2E1LTk0Y2ItOWVmZjJhZjdlZTViOjI5MmE0ZGJjLThlMDQtNDlkYy1hM2FhLTlhNDg5ZTUxNDllZg==");
+        api.getAccessToken();
+        String data_from_web = api.getData("/signals/");
+
+        data_from_web = "[" + data_from_web + "]";
+
+        JSON_Parser_RTE json_parser = new JSON_Parser_RTE(data_from_web);
+        Data.Jour[] data_array = json_parser.return_data();
+        System.out.println("The data has been successfully parsed and saved in the software");
+
+        Connection dbConnection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/eleko", "Admin", "ii594AqcthJj6DL7");
+        System.out.println("Connection established");
+        Database_Import db_import = new Database_Import((java.sql.Connection) dbConnection);
+        System.out.println("Database imported");
+        db_import.storeData(data_array,"datas_rte");
+        System.out.println("Data has been successfully stored in the database");
+    } catch (SQLException | ClassNotFoundException e) {
+        System.out.println("Connection failed");
+        e.printStackTrace();
+    }
+    }
+
+    public void choice6() throws SQLException, ClassNotFoundException{
+        Connection dbConnection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/eleko", "Admin", "ii594AqcthJj6DL7");
+        System.out.println("Connection established");
+        String insertSQL = "DELETE FROM datas_rte";
+        PreparedStatement preparedStatement = dbConnection.prepareStatement(insertSQL);
+        preparedStatement.executeUpdate();
+        System.out.println("Data has been successfully deleted from the RTE database");
+    }
+
 }
 
