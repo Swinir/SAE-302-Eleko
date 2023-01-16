@@ -32,10 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         replaceFragment(new HomeFragment(data));
 
-        if (data != null) {
-            Toast.makeText(this, "Data received", Toast.LENGTH_SHORT).show(); //TODO: Remove after testing
-        }
-        else {
+        if (data == null) {
             Toast.makeText(this, "No data received, app will not function correctly", Toast.LENGTH_LONG).show();
         }
 
@@ -45,62 +42,37 @@ public class MainActivity extends AppCompatActivity {
         Date todays_date = new Date();
         todays_date = getZeroTimeDate(todays_date);
         Date tomorrows_date = new Date(todays_date.getTime() + (1000 * 60 * 60 * 24));
-        Date todayplustwo_date = new Date(todays_date.getTime() + (1000 * 60 * 60 * 24)*2);
-        Date todayplusthree_date = new Date(todays_date.getTime() + (1000 * 60 * 60 * 24)*3);
+        Date todayplustwo_date = new Date(todays_date.getTime() + (1000 * 60 * 60 * 24) * 2);
+        Date todayplusthree_date = new Date(todays_date.getTime() + (1000 * 60 * 60 * 24) * 3);
 
-        int i = 0;
-        boolean stop_menu = false;
+        //Setting the menu bar to show the current day
 
         for (Jour jour : data) {
             //Checking if date is same day as today
-            if (jour.getDate().compareTo(todays_date) == 0 || jour.getDate().compareTo(tomorrows_date) == 0 || jour.getDate().compareTo(todayplustwo_date) == 0 || jour.getDate().compareTo(todayplusthree_date) == 0) {
+            if (jour.getDate().compareTo(todays_date) == 0) {
                 //If it is, we change the menu bar to show the current day
                 //But first, we get the date of the day we want to display
                 Date date = jour.getDate();
+                String dayName = getDayName(date);
+                binding.bottomNavigationView.getMenu().getItem(0).setTitle(dayName);
+            } else if (jour.getDate().compareTo(tomorrows_date) == 0) {
+                Date date = jour.getDate();
+                String dayName = getDayName(date);
+                binding.bottomNavigationView.getMenu().getItem(1).setTitle(dayName);
+            } else if (jour.getDate().compareTo(todayplustwo_date) == 0) {
+                Date date = jour.getDate();
                 //We get the day of the week
-                Calendar calendar = Calendar.getInstance();
-                calendar.setTime(date);
-                int day = calendar.get(Calendar.DAY_OF_WEEK);
-                //We find the name of the day of the week
-                String dayName = "";
-                switch(day){
-                    case 1:
-                        dayName = ("Dimanche");
-                        break;
-                    case 2:
-                        dayName = ("Lundi");
-                        break;
-                    case 3:
-                        dayName = ("Mardi");
-                        break;
-                    case 4:
-                        dayName = ("Mercredi");
-                        break;
-                    case 5:
-                        dayName = ("Jeudi");
-                        break;
-                    case 6:
-                        dayName = ("Vendredi");
-                        break;
-                    case 7:
-                        dayName = ("Samedi");
-                        break;
-                }
-                if (stop_menu == false && binding.bottomNavigationView.getMenu().getItem(i).getTitle().equals(dayName) == true) {
-                    i++;
-                }
-                else if (stop_menu == false  && binding.bottomNavigationView.getMenu().getItem(i).getTitle().equals(dayName) == false) {
-                    binding.bottomNavigationView.getMenu().getItem(i).setTitle(dayName);
-                }
-                if (i == 4){
-                    stop_menu = true;
-                }
-
+                String dayName = getDayName(date);
+                binding.bottomNavigationView.getMenu().getItem(2).setTitle(dayName);
+            } else if (jour.getDate().compareTo(todayplusthree_date) == 0) {
+                Date date = jour.getDate();
+                //We get the day of the week
+                String dayName = getDayName(date);
+                binding.bottomNavigationView.getMenu().getItem(3).setTitle(dayName);
             }
         }
 
         //Find the current day and set the corresponding data to be displayed
-        
 
 
         binding.bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
@@ -156,5 +128,37 @@ public class MainActivity extends AppCompatActivity {
         calendar.set(Calendar.MILLISECOND, 0);
         date = calendar.getTime();
         return date;
+    }
+
+    private String getDayName(Date date) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
+        //We find the name of the day of the week
+        String dayName = "";
+        switch (day) {
+            case 1:
+                dayName = ("Dimanche");
+                break;
+            case 2:
+                dayName = ("Lundi");
+                break;
+            case 3:
+                dayName = ("Mardi");
+                break;
+            case 4:
+                dayName = ("Mercredi");
+                break;
+            case 5:
+                dayName = ("Jeudi");
+                break;
+            case 6:
+                dayName = ("Vendredi");
+                break;
+            case 7:
+                dayName = ("Samedi");
+                break;
+        }
+        return dayName;
     }
 }
