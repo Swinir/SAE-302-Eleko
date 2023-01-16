@@ -18,17 +18,17 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `eleko`
+-- Base de données : `eleko_rte`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `datas`
+-- Structure de la table `datas_rte`
 --
 
-DROP TABLE IF EXISTS `datas`;
-CREATE TABLE IF NOT EXISTS `datas` (
+DROP TABLE IF EXISTS `datas_rte`;
+CREATE TABLE IF NOT EXISTS `datas_rte` (
   `id_data` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `date_gen` varchar(50) NOT NULL,
   `jour` varchar(50) NOT NULL COMMENT 'jours de la capture',
