@@ -60,7 +60,7 @@
                     android:id="@+id/imageViewMap"
                     android:layout_width="match_parent"
                     android:layout_height="350dp"
-                    app:srcCompat="@drawable/france_green" />
+                    app:srcCompat="@drawable/france_gray" />
             </LinearLayout>
         </LinearLayout>
 

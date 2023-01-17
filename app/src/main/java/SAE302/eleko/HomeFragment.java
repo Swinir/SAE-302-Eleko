@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         //Here we get all the different id's for the images we might need to change
         root = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
-        img_france = (ImageView) root.findViewById(R.id.imageViewMap);
+        img_france = root.findViewById(R.id.imageViewMap);
         imageViewHoursArray = new ImageView[24];
         imageViewHoursArray[0] = root.findViewById(R.id.imageViewHours);
         imageViewHoursArray[1] = root.findViewById(R.id.imageViewHours2);
@@ -79,7 +79,7 @@ public class HomeFragment extends Fragment {
                 switch(jour.getDvalue()){
                     case 0:
                         //Display gray picture of France
-                        img_france.setColorFilter(Color.argb(255, 128, 128, 128));
+                        img_france.setImageResource(R.drawable.france_gray);
                         break;
                     case 1:
                         //Display green picture of France
