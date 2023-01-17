@@ -237,7 +237,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageViewHours"
+                    android:id="@+id/imageViewLegend3"
                     android:layout_width="match_parent"
                     android:layout_height="70px"
                     android:scaleType="center"

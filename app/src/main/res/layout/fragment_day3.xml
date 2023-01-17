@@ -109,7 +109,7 @@
                             android:textColor="#FFF" />
 
                         <ImageView
-                            android:id="@+id/imageViewHours"
+                            android:id="@+id/imageViewLegend3"
                             android:layout_width="wrap_content"
                             android:layout_height="50dp"
                             android:rotation="90"

@@ -1,6 +1,5 @@
 package SAE302.eleko;
 
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 
@@ -10,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -41,7 +39,7 @@ public class HomeFragment extends Fragment {
         root = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
         img_france = root.findViewById(R.id.imageViewMap);
         imageViewHoursArray = new ImageView[24];
-        imageViewHoursArray[0] = root.findViewById(R.id.imageViewHours);
+        imageViewHoursArray[0] = root.findViewById(R.id.imageViewLegend3);
         imageViewHoursArray[1] = root.findViewById(R.id.imageViewHours2);
         imageViewHoursArray[2] = root.findViewById(R.id.imageViewHours3);
         imageViewHoursArray[3] = root.findViewById(R.id.imageViewHours4);
