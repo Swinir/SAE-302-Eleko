@@ -158,7 +158,105 @@
             </LinearLayout>
 
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linearLayoutLegend"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="360dp"
+            android:background="@xml/round_rect_shape"
+            android:orientation="vertical"
+            android:padding="0dp">
 
+            <TextView
+                android:id="@+id/textViewLegend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text=" Légende :"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#FFF" />
+
+            <LinearLayout
+                android:id="@+id/linearLayoutLegend1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100px"
+                android:background="@xml/round_rect_shape"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageViewLegend1"
+                    android:layout_width="match_parent"
+                    android:layout_height="70px"
+                    android:scaleType="center"
+                    app:srcCompat="@android:drawable/checkbox_off_background" />
+
+                <TextView
+                    android:id="@+id/textViewLedendText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pas d'alerte"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#FFF"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayoutLegend2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100px"
+                android:background="@xml/round_rect_shape"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/imageViewLegend2"
+                    android:layout_width="match_parent"
+                    android:layout_height="70px"
+                    android:scaleType="center"
+                    app:srcCompat="@android:drawable/checkbox_off_background" />
+                <TextView
+                    android:id="@+id/textViewLedendText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Système électrique tendu."
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#FFF"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayoutLegend3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100px"
+                android:background="@xml/round_rect_shape"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageViewLegend3"
+                    android:layout_width="match_parent"
+                    android:layout_height="70px"
+                    android:scaleType="center"
+                    app:srcCompat="@android:drawable/checkbox_off_background" />
+                <TextView
+                    android:id="@+id/textViewLedendText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Coupure d'électricité en cours"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#FFF"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </FrameLayout>
 

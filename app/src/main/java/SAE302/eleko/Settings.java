@@ -4,10 +4,12 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import SAE302.eleko.Data.Jour;
@@ -31,6 +33,10 @@ public class Settings extends AppCompatActivity {
 
         Button buttoncontact = (Button) findViewById(R.id.buttoncontact);
 
+        ImageView imageViewLegend1 = findViewById(R.id.imageViewLegend1);
+        ImageView imageViewLegend2 = findViewById(R.id.imageViewLegend2);
+        ImageView imageViewLegend3 = findViewById(R.id.imageViewLegend3);
+
 
         //Listen for when the user clicks the settings button
         binding.TopNavigationView.setOnNavigationItemSelectedListener(v -> {
@@ -50,6 +56,11 @@ public class Settings extends AppCompatActivity {
             }
         });
 
+
+        //Set the color of the legend icons
+        imageViewLegend1.setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        imageViewLegend2.setColorFilter(0xFFFFA500, PorterDuff.Mode.MULTIPLY);
+        imageViewLegend3.setColorFilter(0xFFFF0000, PorterDuff.Mode.MULTIPLY);
 
 
         //Remove the action bar
