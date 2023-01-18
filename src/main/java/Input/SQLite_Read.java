@@ -17,9 +17,9 @@ public class SQLite_Read {
             Class.forName("org.sqlite.JDBC");
 
             // create a database connection
-            connection = DriverManager.getConnection("jdbc:sqlite:ecowatt.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:ecowatt.db"); //Connecting to the database which we just downloaded
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT * FROM Infos");
+            ResultSet rs = statement.executeQuery("SELECT * FROM Infos"); //Selecting all the data from the table Infos
 
             int i = 0;
 
@@ -28,20 +28,20 @@ public class SQLite_Read {
                 data = rs.getString("data");
                 // read the data from the cursor
 
-                String newdata = "[" + data + "]";
+                String newdata = "[" + data + "]"; //Adding the brackets to the data to make it a JSON format
 
-                JSON_Parser json_parsed_data = new JSON_Parser(newdata);
-                Jour[] data_array = json_parsed_data.return_data();
+                JSON_Parser json_parsed_data = new JSON_Parser(newdata); //Parsing the data
+                Jour[] data_array = json_parsed_data.return_data(); //Getting the data from the JSON_Parser class
 
                 if (i == 0) {
-                    data_array_all = data_array;
+                    data_array_all = data_array; //If it's the first time we are getting data, we just set the data_array_all to the data_array
                 } else {
-                    int lenght_data = data_array.length;
-                    int lenght_data_all = data_array_all.length;
-                    Jour[] new_data_all = new Data.Jour[lenght_data_all + lenght_data];
-                    System.arraycopy(data_array_all,0,new_data_all,0,lenght_data_all);
-                    System.arraycopy(data_array,0,new_data_all,lenght_data_all,lenght_data);
-                    data_array_all = new_data_all;
+                    int lenght_data = data_array.length; //Getting the length of the data
+                    int lenght_data_all = data_array_all.length; //Getting the length of the data_all
+                    Jour[] new_data_all = new Data.Jour[lenght_data_all + lenght_data]; //Creating a new array with the length of the two arrays added together
+                    System.arraycopy(data_array_all,0,new_data_all,0,lenght_data_all); //Copying the data from the data_all array to the new_data_all array
+                    System.arraycopy(data_array,0,new_data_all,lenght_data_all,lenght_data); //Copying the data from the data array to the new_data_all array
+                    data_array_all = new_data_all; //Setting the data_all array to the new_data_all array
                 }
                 i++;
             }
@@ -55,7 +55,7 @@ public class SQLite_Read {
         } finally {
             try {
                 if (connection != null) {
-                    connection.close();
+                    connection.close(); //Closing the connection
                 }
             } catch (SQLException e) {
                 // connection close failed.

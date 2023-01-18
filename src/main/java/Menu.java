@@ -16,7 +16,7 @@ public class Menu {
         System.out.println("6. Delete all data from RTE SQL Database");
         Scanner input = new Scanner(System.in);
         int choice = input.nextInt();
-        switch (choice) {
+        switch (choice) { //Switch to the correct menu option
             case 1:
                 new Main().choice1();
                 break;
@@ -35,7 +35,7 @@ public class Menu {
             case 6:
                 new Main().choice6();
                 break;
-            default:
+            default: //If the user enters a number that is not in the menu
                 System.out.println("Please enter a valid choice");
                 break;
         }
