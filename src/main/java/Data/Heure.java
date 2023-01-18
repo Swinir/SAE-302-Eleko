@@ -10,7 +10,7 @@ public class Heure{
 
     //Constructeur
     public Heure(int heure, Integer hvalue) {
-        this.heure = new Etat(heure, hvalue);
+        this.heure = new Etat(heure, hvalue); //Using the Etat class to define the hour
     }
 
     public Etat getHeure() {

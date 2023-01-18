@@ -15,7 +15,7 @@ public class JSON_Saver_Heure {
         current_day = new Data.Jour(GenerationFichier, jour, dvalue, message, arr_24h);
     }
     public void JSON_Saver_Hours(Integer pas, Integer hvalue) {
-        arr_24h[pas] = new Data.Heure(pas, hvalue);
+        arr_24h[pas] = new Data.Heure(pas, hvalue); //Saves the hour into the hours array
     }
 
 
