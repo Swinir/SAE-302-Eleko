@@ -27,9 +27,10 @@ public class LoadingScreen extends AppCompatActivity {
         }
 
 
-        //String inputURL = "http://isis.unice.fr/~mgautero/ext/sae302/index.php?action=get"; //Dummy URL for testing
-        //String inputURL = "http://eleko.me/index.php";
-        String inputURL = "http://eleko.me/index_rte.php";
+        //String inputURL = "http://isis.unice.fr/~mgautero/ext/sae302/index.php?action=get";
+        //String inputURL = "http://eleko.me/api/index.php";
+        //String inputURL = "http://eleko.me/api/index_rte.php";
+        String inputURL = "http://eleko.me/api/index_test.php"; //URL for test values
 
         String Web_Data = new Web().onCreate(inputURL,LoadingScreen.this); //Get the JSON data from the web
 

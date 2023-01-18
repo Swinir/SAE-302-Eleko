@@ -41,7 +41,7 @@ public class Day2Fragment extends Fragment {
         //Here we get all the different id's for the images we might need to change
         root = (ViewGroup) inflater.inflate(R.layout.fragment_day2, container, false);
         img_france = root.findViewById(R.id.imageViewMap);
-        imageViewHoursArray = new ImageView[24];
+        imageViewHoursArray = new ImageView[24]; //We have 24 bars for each hour so we need 24 images
         imageViewHoursArray[0] = root.findViewById(R.id.imageViewLegend3);
         imageViewHoursArray[1] = root.findViewById(R.id.imageViewHours2);
         imageViewHoursArray[2] = root.findViewById(R.id.imageViewHours3);
@@ -170,9 +170,9 @@ public class Day2Fragment extends Fragment {
         return root;
     }
 
-    private Date getZeroTimeDate(Date date) {
+    private Date getZeroTimeDate(Date date) { //This function is used to get the date at 00:00:00
         Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
+        calendar.setTime(date); // Settting the calendar to the date we want to get the time from
         calendar.set(Calendar.HOUR_OF_DAY, 0);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);

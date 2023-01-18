@@ -9,7 +9,7 @@ public class Heure implements Serializable {
 
     //Constructeur
     public Heure(int heure, Integer hvalue) {
-        this.heure = new Etat(heure, hvalue);
+        this.heure = new Etat(heure, hvalue); //Create a object Etat for each hour
     }
 
 

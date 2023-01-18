@@ -97,9 +97,9 @@ public class MainActivity extends AppCompatActivity {
         //Listen for when the user clicks the settings button
         binding.TopNavigationView.setOnNavigationItemSelectedListener(v -> {
             if (v.getItemId() == R.id.settingbutton) {
-                Intent intent_settings = new Intent(this, Settings.class);
-                intent_settings.putExtra("data", data);
-                startActivity(intent_settings);
+                Intent intent_settings = new Intent(this, Settings.class); //Create intent to go to settings activity
+                intent_settings.putExtra("data", data); //Pass the data to the settings activity
+                startActivity(intent_settings); //Start the settings activity
             }
             return true;
         });
@@ -112,16 +112,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void replaceFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, fragment);
-        fragmentTransaction.commit();
+    private void replaceFragment(Fragment fragment) { //Replace the fragment with the new fragment depending on which day the user wants to see
+        FragmentManager fragmentManager = getSupportFragmentManager(); //Get the fragment manager
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction(); //Start a transaction
+        fragmentTransaction.replace(R.id.frameLayout, fragment); //Replace the fragment
+        fragmentTransaction.commit(); //Commit the transaction
     }
 
-    private Date getZeroTimeDate(Date date) {
+    private Date getZeroTimeDate(Date date) { //This function will return a date with the time set to 00:00:00
         Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
+        calendar.setTime(date); // Settting the calendar to the date we want to get the time from
         calendar.set(Calendar.HOUR_OF_DAY, 0);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         return date;
     }
 
-    private String getDayName(Date date) {
+    private String getDayName(Date date) { //
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         int day = calendar.get(Calendar.DAY_OF_WEEK);
