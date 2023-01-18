@@ -16,9 +16,9 @@ public class Database_Import {
 
     public void storeData(Jour[] data , String name) throws SQLException, ClassNotFoundException {
         String insertSQL = "INSERT INTO "+name+" (date_gen, jour, dvalue, hours0_data, hours1_data, hours2_data, hours3_data, hours4_data, hours5_data, hours6_data, hours7_data, hours8_data, hours9_data, hours10_data, hours11_data, hours12_data, hours13_data, hours14_data, hours15_data, hours16_data, hours17_data, hours18_data, hours19_data, hours20_data, hours21_data, hours22_data, hours23_data, message_data) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        PreparedStatement preparedStatement = dbConnection.prepareStatement(insertSQL);
+        PreparedStatement preparedStatement = dbConnection.prepareStatement(insertSQL); //Preparing the query
         for (Jour jour : data) {
-            preparedStatement.setString(1, jour.getGenerationFichier());
+            preparedStatement.setString(1, jour.getGenerationFichier()); //All the datas to be stored in the database
             preparedStatement.setString(2, jour.getJour());
             preparedStatement.setString(3, String.valueOf(jour.getDvalue()));
 
@@ -27,18 +27,18 @@ public class Database_Import {
             int i = 0;
             for (Heure heure : Arr24h) {
                 try{
-                    preparedStatement.setInt(i + 4, heure.getHvalue());
+                    preparedStatement.setInt(i + 4, heure.getHvalue()); //The hours array starts at the 4th column
                 } catch (NullPointerException e) {
-                    preparedStatement.setInt(i + 4, 0);
+                    preparedStatement.setInt(i + 4, 0); //If the value is null, we set it to 0
                 }
                 i++;
             }
 
-            preparedStatement.setString(28, jour.getMessage());
+            preparedStatement.setString(28, jour.getMessage()); //The message is the last column
 
-            preparedStatement.addBatch();
+            preparedStatement.addBatch(); //Add the query to the batch
         }
-        preparedStatement.executeBatch();
-        preparedStatement.close();
+        preparedStatement.executeBatch(); //Execute the batch
+        preparedStatement.close(); //Close the connection
     }
 }

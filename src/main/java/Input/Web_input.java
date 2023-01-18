@@ -15,14 +15,14 @@ public class Web_input {
     }
 
     public URLConnection ouvrirURL (String s) {
-        URLConnection c;
+        URLConnection c; //This is the connection to the web
         URL u;
 
         c= null;
         u= null;
 
         try {
-            u= new URL(serveur + "?" + s);
+            u= new URL(serveur + "?" + s); //This is the URL of the web page
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -44,15 +44,13 @@ public class Web_input {
 
         texte= new StringBuilder();
         try {
-            in= new BufferedReader(new InputStreamReader(c.getInputStream(), "UTF-8"));
+            in= new BufferedReader(new InputStreamReader(c.getInputStream(), "UTF-8")); //This is the input stream
             while ((inpuline= in.readLine()) != null) {
-                texte.append(inpuline + "\n");
+                texte.append(inpuline + "\n"); //This is the input text
             }
         } catch (UnsupportedEncodingException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return texte.toString();
