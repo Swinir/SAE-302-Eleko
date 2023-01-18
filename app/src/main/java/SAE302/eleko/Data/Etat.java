@@ -9,8 +9,8 @@ public class Etat implements Serializable {
     private int hvalue;
 
     public Etat(int pas, int hvalue) {
-        this.pas = pas;
-        this.hvalue = hvalue;
+        this.pas = pas; //Heure
+        this.hvalue = hvalue; //Etat
     }
 
     public Integer getHvalue() {

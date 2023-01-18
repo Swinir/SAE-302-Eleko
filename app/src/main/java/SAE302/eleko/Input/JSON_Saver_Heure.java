@@ -12,10 +12,10 @@ public class JSON_Saver_Heure {
 
     public void JSON_Saver_Day(String GenerationFichier, String jour, Integer dvalue, String message,SAE302.eleko.Data.Heure[] arr_24h) throws ParseException {
         //This method is used to save the parsed JSON data for the day
-        current_day = new SAE302.eleko.Data.Jour(GenerationFichier, jour, dvalue, message, arr_24h);
+        current_day = new SAE302.eleko.Data.Jour(GenerationFichier, jour, dvalue, message, arr_24h); //Create a Jour object
     }
     public void JSON_Saver_Hours(Integer pas, Integer hvalue) {
-        arr_24h[pas] = new SAE302.eleko.Data.Heure(pas, hvalue);
+        arr_24h[pas] = new SAE302.eleko.Data.Heure(pas, hvalue); //Create a Heure object
     }
 
 

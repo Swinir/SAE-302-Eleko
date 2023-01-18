@@ -42,7 +42,7 @@ public class Day3Fragment extends Fragment {
         //Here we get all the different id's for the images we might need to change
         root = (ViewGroup) inflater.inflate(R.layout.fragment_day3, container, false);
         img_france = root.findViewById(R.id.imageViewMap);
-        imageViewHoursArray = new ImageView[24];
+        imageViewHoursArray = new ImageView[24]; //We have 24 bars for each hour so we need 24 images
         imageViewHoursArray[0] = root.findViewById(R.id.imageViewLegend3);
         imageViewHoursArray[1] = root.findViewById(R.id.imageViewHours2);
         imageViewHoursArray[2] = root.findViewById(R.id.imageViewHours3);

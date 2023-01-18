@@ -33,7 +33,7 @@ public class Settings extends AppCompatActivity {
 
         Button buttoncontact = (Button) findViewById(R.id.buttoncontact);
 
-        ImageView imageViewLegend1 = findViewById(R.id.imageViewLegend1);
+        ImageView imageViewLegend1 = findViewById(R.id.imageViewLegend1); //Getting the Id's for the images we might need to change
         ImageView imageViewLegend2 = findViewById(R.id.imageViewLegend2);
         ImageView imageViewLegend3 = findViewById(R.id.imageViewLegend3);
 
@@ -41,8 +41,8 @@ public class Settings extends AppCompatActivity {
         //Listen for when the user clicks the settings button
         binding.TopNavigationView.setOnNavigationItemSelectedListener(v -> {
             if (v.getItemId() == R.id.returnbutton) {
-                Intent intent = new Intent(this, MainActivity.class);
-                intent.putExtra("data", data);
+                Intent intent = new Intent(this, MainActivity.class); //Create a new intent to go to the main activity
+                intent.putExtra("data", data); //Pass the data to the main activity
                 startActivity(intent);
             }
             return true;
@@ -52,7 +52,7 @@ public class Settings extends AppCompatActivity {
         buttoncontact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goToUrl("https://github.com/Swinir/SAE-302-Eleko/issues/new");
+                goToUrl("https://github.com/Swinir/SAE-302-Eleko/issues/new"); //Open the github issues page
             }
         });
 

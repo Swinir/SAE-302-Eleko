@@ -38,7 +38,7 @@ public class HomeFragment extends Fragment {
         //Here we get all the different id's for the images we might need to change
         root = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
         img_france = root.findViewById(R.id.imageViewMap);
-        imageViewHoursArray = new ImageView[24];
+        imageViewHoursArray = new ImageView[24]; //We have 24 bars for each hour so we need 24 images
         imageViewHoursArray[0] = root.findViewById(R.id.imageViewLegend3);
         imageViewHoursArray[1] = root.findViewById(R.id.imageViewHours2);
         imageViewHoursArray[2] = root.findViewById(R.id.imageViewHours3);
@@ -66,8 +66,8 @@ public class HomeFragment extends Fragment {
 
 
         //Getting today's date and putting it in java's date format
-        Date todays_date = new Date();
-        todays_date = getZeroTimeDate(todays_date);
+        Date todays_date = new Date(); //Getting today's date
+        todays_date = getZeroTimeDate(todays_date); //Setting the time to 00:00:00 to be able to compare it to the date in the data
 
         for (Jour jour : data) {
             //Checking if date is same day as today
@@ -125,7 +125,7 @@ public class HomeFragment extends Fragment {
 
     private Date getZeroTimeDate(Date date) { //This function is used to get the date at 00:00:00 so we can compare the dates in the data
         Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
+        calendar.setTime(date); //Setting the calendar to the date we want to change
         calendar.set(Calendar.HOUR_OF_DAY, 0);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
