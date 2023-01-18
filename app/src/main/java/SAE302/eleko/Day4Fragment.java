@@ -74,6 +74,7 @@ public class Day4Fragment extends Fragment {
         //We get the id of the textview that will display the date
         maintext = root.findViewById(R.id.textViewPrevision);
 
+        TextView PrevisionMessage = root.findViewById(R.id.textViewPrevisionMessage);
 
         //Getting today's date and putting it in java's date format
         Date todays_date = new Date();
@@ -121,6 +122,8 @@ public class Day4Fragment extends Fragment {
                     maintext.setText(text + " " + dayName + "");
                 }
 
+                //Then we display the message
+                PrevisionMessage.setText(jour.getMessage());
 
                 //We start with the picture of France :
                 switch(jour.getDvalue()){

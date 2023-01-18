@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -64,6 +65,7 @@ public class HomeFragment extends Fragment {
         imageViewHoursArray[22] = root.findViewById(R.id.imageViewHours23);
         imageViewHoursArray[23] = root.findViewById(R.id.imageViewHours24);
 
+        TextView PrevisionMessage = root.findViewById(R.id.textViewPrevisionMessage);
 
         //Getting today's date and putting it in java's date format
         Date todays_date = new Date(); //Getting today's date
@@ -92,6 +94,9 @@ public class HomeFragment extends Fragment {
                         img_france.setImageResource(R.drawable.france_red);
                         break;
                 }
+
+                //Then we display the message
+                PrevisionMessage.setText(jour.getMessage());
 
                 //To take care of the hours array, we need to do the following
                 Heure[] Arr24h = jour.getArr_24h();
